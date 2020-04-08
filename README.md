@@ -3,6 +3,12 @@ BitCarve allows your to carve any type of data on the Bitcoin network **forever*
 
 ## Get started
 
+**Disclaimer**: To avoid data corruption, there can be no change of the UTXO. You will lose the whole amount in the UTXO.  
+
+To compute the minimum required amount of satoshis in the UTXO:  
+`amount = 2 * fileSize (bytes) + fileSize (bytes) % 25`
+
+
 ```bash
 $ go build
 
@@ -39,7 +45,7 @@ $ docker run -it bitcarve \
     --fee 1 \
     --utxo your_utxo_id \
     --key your_private_key
-    
+
 Successfully carved data on the Bitcoin network.
 TxID: ea33b22a9f63581da342999f3f47ef2fe886e7ddc351fea2ac3168b0fc552ede
 ```
