@@ -37,3 +37,9 @@ func Address(data []byte, network byte) string {
 	address = append(address, checksum...)
 	return base58.Encode(address)
 }
+
+// RetrieveAddressData returns data contained in address
+func RetrieveAddressData(address string) []byte {
+	bytes := base58.Decode(address)
+	return bytes[1 : len(bytes)-4]
+}

@@ -29,8 +29,15 @@ func init() {
 }
 
 func main() {
-	raw := CreateRawTX()
-	signed := SignRawTX(raw)
-	txid := BroadcastTX(signed)
-	fmt.Println("Data successfully carved on the Bitcoin network.\nTxID: " + txid)
+	if decrypt {
+		// Decrypt TX
+		DecryptTX()
+	} else {
+		// Carve on the network
+		raw := CreateRawTX()
+		signed := SignRawTX(raw)
+		txid := BroadcastTX(signed)
+		fmt.Println("Data successfully carved on the Bitcoin network.\nTxID: " + txid)
+	}
+
 }
