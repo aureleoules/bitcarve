@@ -64,7 +64,7 @@ Retrieved data.
 
 ## How it works
 
-To storage large files (kilobytes) on the Bitcoin network, the `OP_RETURN` cannot be used because of its 40 bytes limit.
+To store large files (kilobytes) on the Bitcoin network, the `OP_RETURN` cannot be used because of its 40 bytes limit.
 
 Instead, `bitcarve` stores data in tx output addresses. Each address can store 20 bytes of data, 1 version byte, and 4 bytes of checksum.   
 
