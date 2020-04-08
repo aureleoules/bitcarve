@@ -89,7 +89,7 @@ Instead, `bitcarve` stores data in tx output addresses. Each address can store 2
 
 Your file is split into chunks of 20 bytes, hashed to compute a checksum, versionned and converted to base58 in order to produce valid Bitcoin addresses.
 
-Each address is added to the bitcoin transaction with 1 sat (0.00000001 BTC).
+Each address is added to the bitcoin transaction with 546 sats (main net requirement) (0.00000546 BTC).
 
 The transaction can be signed and broadcast to the network.
 
