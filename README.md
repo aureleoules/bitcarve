@@ -30,7 +30,7 @@ Retrieved data.
 
 ## Requirements
 * Go
-* bitcoind and bitcoin-cli (chain data is not required)
+* bitcoin-daemon and bitcoin-cli (chain data is not required)
 
 ## Arguments
 ### Carve
