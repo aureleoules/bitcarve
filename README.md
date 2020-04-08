@@ -1,13 +1,10 @@
 # BitCarve
 BitCarve allows your to carve any type of data on the Bitcoin network **forever**.
 
+[8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21](https://www.blockchain.com/btc/tx/8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21)
 ## Get started
 
 **Disclaimer**: To avoid data corruption, there can be no change of the UTXO. You will lose the whole amount in the UTXO.  
-
-To compute the minimum required amount of satoshis in the UTXO:  
-`amount = 2 * fileSize (bytes) + fileSize (bytes) % 25`
-
 
 ```bash
 $ go build
@@ -15,19 +12,19 @@ $ go build
 # Carve data
 $ ./bitcarve \
     --file image.jpg  \
-    --network testnet \ 
-    --amount 1 \
+    --network main \ 
+    --amount 546 \ # minimum on main is 546 sats/output
     --fee 1 \
     --utxo your_utxo_id \
     --key your_private_key
 
 Successfully carved data on the Bitcoin network.
-TxID: ea33b22a9f63581da342999f3f47ef2fe886e7ddc351fea2ac3168b0fc552ede
+TxID: 8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21
 
 # Decrypt data
 $ ./bitcarve \
     --decrypt \
-    --txid ea33b22a9f63581da342999f3f47ef2fe886e7ddc351fea2ac3168b0fc552ede \
+    --txid 8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21 \
     --network testnet \
     --output myimage.jpg
 
@@ -47,7 +44,7 @@ $ docker run -it bitcarve \
     --key your_private_key
 
 Successfully carved data on the Bitcoin network.
-TxID: ea33b22a9f63581da342999f3f47ef2fe886e7ddc351fea2ac3168b0fc552ede
+TxID: 8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21
 ```
 
 ## Requirements

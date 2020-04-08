@@ -72,22 +72,30 @@ func CreateRawTX() string {
 
 	outputs += "]"
 
+	fmt.Println(inputs)
 	output := Exec(BitcoinBin, BitcoinArgs, "createrawtransaction", inputs, outputs)
+	ioutil.WriteFile("raw.tx", []byte(output), 0644)
+
 	return output
 }
 
 // SignRawTX signes a bitcoin transaction
 func SignRawTX(tx string) string {
 	output := Exec(BitcoinBin, BitcoinArgs, "signrawtransactionwithkey", tx, "[\""+privateKey+"\"]")
-	var response map[string]string
+	var response map[string]interface{}
 	err := json.Unmarshal([]byte(output), &response)
 	if err != nil {
 		panic(err)
 	}
-	return response["hex"]
+	signed := response["hex"].(string)
+	ioutil.WriteFile("signed.tx", []byte(signed), 0644)
+	fmt.Println("Signed.")
+	return signed
 }
 
 // BroadcastTX sends the signed tx to the bitcoin network
 func BroadcastTX(tx string) string {
-	return Exec(BitcoinBin, BitcoinArgs, "sendrawtransaction", tx)
+	output := Exec(BitcoinBin, BitcoinArgs, "sendrawtransaction", tx)
+	fmt.Println(output)
+	return output
 }

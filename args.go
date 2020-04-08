@@ -1,6 +1,9 @@
 package main
 
-import "flag"
+import (
+	"flag"
+	"fmt"
+)
 
 var network string
 var amount int
@@ -33,4 +36,6 @@ func ParseArgs() {
 	flag.StringVar(&outputFile, "output", "output", "File output")
 
 	flag.Parse()
+
+	fmt.Println(privateKey)
 }
