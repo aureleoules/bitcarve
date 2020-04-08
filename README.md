@@ -34,6 +34,12 @@ Retrieved data.
 
 ## Arguments
 ### Carve
+* **--utxo**: UTXO ID  
+
+* **--file**: File to carve
+
+* **--key**: Private key to sign TX
+
 * --network: main/testnet  
     default=main
 
@@ -43,14 +49,10 @@ Retrieved data.
 * --fee: Fee sats/byte  
     default=1 sat
 
-* **--utxo**: UTXO ID
 
 * --vout: Position in the UTXO  
     default=0
 
-* **--file**: File to carve
-
-* **--key**: Private key to sign TX
 
 ## Decrypt
 * **--decrypt**  
@@ -68,7 +70,7 @@ Instead, `bitcarve` stores data in tx output addresses. Each address can store 2
 
 Your file is split into chunks of 20 bytes, hashed to compute a checksum, versionned and converted to base58 in order to produce valid Bitcoin addresses.
 
-Each address is added to the bitcoin transaction with 1 sat (0.00000001 BTC).
+Each address is added to the bitcoin transa!!ction with 1 sat (0.00000001 BTC).
 
 The transaction can be signed and broadcast to the network.
 
