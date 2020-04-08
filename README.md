@@ -28,6 +28,22 @@ $ ./bitcarve \
 Retrieved data.
 ```
 
+### Docker
+
+```bash
+$ docker build --tag bitcarve .
+$ docker run -it bitcarve \
+    --file image.jpg  \
+    --network testnet \ 
+    --amount 1 \
+    --fee 1 \
+    --utxo your_utxo_id \
+    --key your_private_key
+    
+Successfully carved data on the Bitcoin network.
+TxID: ea33b22a9f63581da342999f3f47ef2fe886e7ddc351fea2ac3168b0fc552ede
+```
+
 ## Requirements
 * Go
 * bitcoin-daemon and bitcoin-cli (chain data is not required)
