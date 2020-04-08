@@ -44,6 +44,8 @@ func DecryptTX() {
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println("Retrieved data.")
 }
 
 // CreateRawTX builds a raw bitcoin tx
