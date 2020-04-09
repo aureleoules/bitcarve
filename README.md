@@ -25,7 +25,6 @@ TxID: 8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21
 $ ./bitcarve \
     --decrypt \
     --txid 8cf28eb9ac221d8cd15298b9ae63eca910b536a5234c133c7e364b29a4e39d21 \
-    --network testnet \
     --output myimage.jpg
 
 Retrieved data.
